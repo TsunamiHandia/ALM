@@ -48,3 +48,14 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 <img width="1053" height="436" alt="image" src="https://github.com/user-attachments/assets/7602a1c5-8ade-4e44-8fbb-30827119193a" />
 
 ## Pipeline en DevOps con Build Tools
+
+### Exportar una solución desde un entorno de desarrollo
+
+Con este pipeline, obtendremos todos los objetos de una solución en el entorno de desarrollo y los subiremos al repositorio mediante un commit.
+
+Necesitamos disponer de los siguientes elementos:
+- Autorizacion de aplicación en Azure Entra ID para acceder al entorno
+- Cuenta en DevOps
+- Conexión de servicio hacia el entorno en el repositorio de DevOps
+- PAT (Personal Access Token) con los permisos necesarios
+
