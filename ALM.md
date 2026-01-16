@@ -54,8 +54,26 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 Con este pipeline, obtendremos todos los objetos de una solución en el entorno de desarrollo y los subiremos al repositorio mediante un commit.
 
 Necesitamos disponer de los siguientes elementos:
-- Autorizacion de aplicación en Azure Entra ID para acceder al entorno
+- [Autorizacion de aplicación en Azure Entra ID para acceder al entorno](##Autorizacion-de-aplicación-en-Azure-Entra-ID-para-acceder-al-entorno)
 - Cuenta en DevOps
-- Conexión de servicio hacia el entorno en el repositorio de DevOps
-- PAT (Personal Access Token) con los permisos necesarios
+- [Conexión de servicio hacia el entorno en el repositorio de DevOps](##Conexión-de-servicio-hacia-el-entorno-en-el-repositorio-de-DevOps)
+- [PAT (Personal Access Token) con los permisos necesarios](##Personal-Access-Token)
 
+#### Autorizacion de aplicación en Azure Entra ID para acceder al entorno
+
+Debemos disponer en Azure Entra ID de una autorización de aplicación hacia nuestro entornno de Power Platform.
+
+Crearemos un registro de applicación normal
+
+<img width="1442" height="597" alt="image" src="https://github.com/user-attachments/assets/b5918301-a14d-4779-aaae-9829a5def1f4" />
+
+Asignamos los siguientes permisos
+
+<img width="1027" height="392" alt="image" src="https://github.com/user-attachments/assets/61194015-1ae2-4333-8722-d2c60b895250" />
+
+Creamos un secreto y copiamos su valor antes de salir
+
+<img width="1024" height="209" alt="image" src="https://github.com/user-attachments/assets/a323746f-8b26-4bfd-ac65-e8a1f58a8a05" />
+
+#### Conexión de servicio hacia el entorno en el repositorio de DevOps
+#### Personal Access Token
