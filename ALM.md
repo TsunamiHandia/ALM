@@ -40,7 +40,11 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 - Pipeline en DevOps 
 
   - Tareas [Build tools ](https://learn.microsoft.com/en-us/power-platform/alm/devops-build-tool-tasks#build-and-release-pipelines)
+    
+    [Ver caso Pipeline en DevOps con Build Tools](#Pipeline-en-DevOps-con-Build-Tools)
 
   - [YAML pipeline ](https://learn.microsoft.com/en-us/power-platform/alm/devops-build-tool-tasks#solution-tasks)
 
 <img width="1053" height="436" alt="image" src="https://github.com/user-attachments/assets/7602a1c5-8ade-4e44-8fbb-30827119193a" />
+
+## Pipeline en DevOps con Build Tools
