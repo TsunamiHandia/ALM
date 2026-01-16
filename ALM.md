@@ -107,3 +107,16 @@ Ejemplo de creación del Servicio de conexión **Development Service Connection*
 |Security| Marcar la opción *Grant access permission to all pipelines*|
 
 #### Personal Access Token
+
+<img width="300" height="371" alt="image" src="https://github.com/user-attachments/assets/97a411fe-701f-4fa6-a147-9a69d0eb9488" />
+
+Crearemos un PAT con los siguientes permisos
+
+|Permiso|Descripción|Grado|
+|-|-|-|
+|Agent Pools|Manage agent pools and agents|Read & manage|
+|Build|Artifacts, definitions, requests, queue a build, and update build properties|Read & execute|
+|Code|Source code, repositories, pull requests, and notifications|Read & write|
+
+
+
