@@ -106,6 +106,10 @@ Ejemplo de creación del Servicio de conexión **Development Service Connection*
 |Service Connection Name|Nombre del servicio de conexión|
 |Security| Marcar la opción *Grant access permission to all pipelines*|
 
+> 💡**Nota**
+>
+> En caso de no estar disponible **Power Platform** dentro de las opciones seleccionables para la creación del servicio, deberemos instalarlo desde [**Visual Studio Marketplace**](https://marketplace.visualstudio.com/search?term=power%20platform&target=AzureDevOps&category=All%20categories&sortBy=Relevance)
+
 #### Personal Access Token
 
 <img width="300" height="371" alt="image" src="https://github.com/user-attachments/assets/97a411fe-701f-4fa6-a147-9a69d0eb9488" />
