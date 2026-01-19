@@ -57,7 +57,7 @@ Necesitamos disponer de los siguientes elementos:
 - [Autorizacion de aplicación en Azure Entra ID para acceder al entorno](##Autorizacion-de-aplicación-en-Azure-Entra-ID-para-acceder-al-entorno)
 - Cuenta en DevOps
 - [Conexión de servicio hacia el entorno en el repositorio de DevOps](##Conexión-de-servicio-hacia-el-entorno-en-el-repositorio-de-DevOps)
-- [PAT (Personal Access Token) con los permisos necesarios](##Personal-Access-Token)
+- [PAT (Personal Access Token) con los permisos necesarios](#Personal-Access-Token)
 - [Agent pool](##Agent-tool)
 
 #### Autorizacion de aplicación en Azure Entra ID para acceder al entorno
