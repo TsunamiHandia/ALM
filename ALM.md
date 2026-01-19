@@ -49,22 +49,20 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 
 ## Pipeline en DevOps con Build Tools
 
-### Exportar una solución desde un entorno de desarrollo
-
-Con este pipeline, obtendremos todos los objetos de una solución en el entorno de desarrollo y los subiremos al repositorio mediante un commit.
-
 Necesitamos disponer de los siguientes elementos:
+
 - [Autorizacion de aplicación en Azure Entra ID para acceder al entorno](#Autorizacion-de-aplicación-en-Azure-Entra-ID-para-acceder-al-entorno)
 - Cuenta en DevOps
 - [Conexión de servicio hacia el entorno en el repositorio de DevOps](#Conexión-de-servicio-hacia-el-entorno-en-el-repositorio-de-DevOps)
 - [PAT (Personal Access Token) con los permisos necesarios](#Personal-Access-Token)
+- [Permisos sobre el repositorio](#Permisos-sobre-el-repositorio)
 - [Agent pool](#Agent-tool)
 
-#### Autorizacion de aplicación en Azure Entra ID para acceder al entorno
+### Autorizacion de aplicación en Azure Entra ID para acceder al entorno
 
 Debemos disponer en Azure Entra ID de una autorización de aplicación hacia nuestro entornno de Power Platform.
 
-##### Azure Entra Id
+#### Azure Entra Id
 
 Crearemos un registro de applicación normal
 
@@ -88,7 +86,7 @@ Asignar permiso de Administrador de sistema
 
 <img width="489" height="903" alt="image" src="https://github.com/user-attachments/assets/d2962a6b-071b-43f4-9c78-0b51287b279e" />
 
-#### Conexión de servicio hacia el entorno en el repositorio de DevOps
+### Conexión de servicio hacia el entorno en el repositorio de DevOps
 
 Crearemos tantos Servicios de conexión como entornos distintos nos queramos conectar.
 
@@ -107,7 +105,7 @@ Ejemplo de creación del Servicio de conexión **Development Service Connection*
 |Service Connection Name|Nombre del servicio de conexión|
 |Security| Marcar la opción *Grant access permission to all pipelines*|
 
-#### Permisos sobre el repositorio
+### Permisos sobre el repositorio
 
 Conceder permiso en el repositorio destino a **Project Collection Build Service Accounts** ➡️ ***Contribute** ➡️ **Allow**
 
@@ -121,7 +119,7 @@ Conceder permiso en el repositorio destino a **... Build Service (CRM-PowerPlatf
 >
 > En caso de no estar disponible **Power Platform** dentro de las opciones seleccionables para la creación del servicio, deberemos instalarlo desde [**Visual Studio Marketplace**](https://marketplace.visualstudio.com/search?term=power%20platform&target=AzureDevOps&category=All%20categories&sortBy=Relevance)
 
-#### Personal Access Token
+### Personal Access Token
 
 <img width="300" height="371" alt="image" src="https://github.com/user-attachments/assets/97a411fe-701f-4fa6-a147-9a69d0eb9488" />
 
@@ -133,7 +131,7 @@ Crearemos un PAT con los siguientes permisos
 |Build|Artifacts, definitions, requests, queue a build, and update build properties|Read & execute|
 |Code|Source code, repositories, pull requests, and notifications|Read & write|
 
-##### Agent pool
+### Agent pool
 
 Para correr nuestros pipelines necesitaremos un Agent Pool.
 
@@ -142,5 +140,10 @@ Para correr nuestros pipelines necesitaremos un Agent Pool.
 > Consultar más sobre los [DevOps Pools](https://learn.microsoft.com/en-us/azure/devops/managed-devops-pools/?view=azure-devops)
 
 En este caso he optado por usar un [*Self-hosted* agent pool alojado en Docker](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/docker?view=azure-devops)
+
+
+## Exportar una solución desde un entorno de desarrollo
+
+Con este pipeline, obtendremos todos los objetos de una solución en el entorno de desarrollo y los subiremos al repositorio mediante un commit.
 
 
