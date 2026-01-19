@@ -54,11 +54,11 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 Con este pipeline, obtendremos todos los objetos de una solución en el entorno de desarrollo y los subiremos al repositorio mediante un commit.
 
 Necesitamos disponer de los siguientes elementos:
-- [Autorizacion de aplicación en Azure Entra ID para acceder al entorno](##Autorizacion-de-aplicación-en-Azure-Entra-ID-para-acceder-al-entorno)
+- [Autorizacion de aplicación en Azure Entra ID para acceder al entorno](#Autorizacion-de-aplicación-en-Azure-Entra-ID-para-acceder-al-entorno)
 - Cuenta en DevOps
-- [Conexión de servicio hacia el entorno en el repositorio de DevOps](##Conexión-de-servicio-hacia-el-entorno-en-el-repositorio-de-DevOps)
+- [Conexión de servicio hacia el entorno en el repositorio de DevOps](#Conexión-de-servicio-hacia-el-entorno-en-el-repositorio-de-DevOps)
 - [PAT (Personal Access Token) con los permisos necesarios](#Personal-Access-Token)
-- [Agent pool](##Agent-tool)
+- [Agent pool](#Agent-tool)
 
 #### Autorizacion de aplicación en Azure Entra ID para acceder al entorno
 
@@ -134,4 +134,13 @@ Crearemos un PAT con los siguientes permisos
 |Code|Source code, repositories, pull requests, and notifications|Read & write|
 
 ##### Agent pool
+
+Para correr nuestros pipelines necesitaremos un Agent Pool.
+
+> 💡**Nota**
+>
+> Consultar más sobre los [DevOps Pools](https://learn.microsoft.com/en-us/azure/devops/managed-devops-pools/?view=azure-devops)
+
+En este caso he optado por usar un [*Self-hosted* agent pool alojado en Docker](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/docker?view=azure-devops)
+
 
