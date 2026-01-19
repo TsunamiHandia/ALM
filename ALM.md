@@ -58,6 +58,7 @@ Necesitamos disponer de los siguientes elementos:
 - Cuenta en DevOps
 - [Conexión de servicio hacia el entorno en el repositorio de DevOps](##Conexión-de-servicio-hacia-el-entorno-en-el-repositorio-de-DevOps)
 - [PAT (Personal Access Token) con los permisos necesarios](##Personal-Access-Token)
+- [Agent pool](##Agent-tool)
 
 #### Autorizacion de aplicación en Azure Entra ID para acceder al entorno
 
@@ -112,10 +113,9 @@ Conceder permiso en el repositorio destino a **Project Collection Build Service 
 
 <img width="1904" height="910" alt="image" src="https://github.com/user-attachments/assets/8d0bbcaa-725c-4868-805b-da2180502662" />
 
-Conceder permiso en el repositorio destino a **Project Platform Build Service ** ➡️ ***Contribute** ➡️ **Allow**
+Conceder permiso en el repositorio destino a **... Build Service (CRM-PowerPlatform)** ➡️ ***Contribute** ➡️ **Allow**
 
 <img width="1861" height="868" alt="image" src="https://github.com/user-attachments/assets/7d9d2f10-d553-470c-aa2c-3a33dddfba8c" />
-
 
 > 💡**Nota**
 >
@@ -133,5 +133,5 @@ Crearemos un PAT con los siguientes permisos
 |Build|Artifacts, definitions, requests, queue a build, and update build properties|Read & execute|
 |Code|Source code, repositories, pull requests, and notifications|Read & write|
 
-
+##### Agent pool
 
