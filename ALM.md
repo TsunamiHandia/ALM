@@ -3,6 +3,22 @@ Application lifecycle management
 
 <img width="474" height="468" alt="image" src="https://github.com/user-attachments/assets/fdcf17d2-c237-45bf-ab01-e9084352508e" />
 
+## Tabla de contenido
+  - [Entornos](#entornos)
+  - [Soluciones](#soluciones)
+    - [Control de versiones](#control-de-versiones)
+    - [Control de versión con una solución](#control-de-versión-con-una-solución)
+  - [Pipeline en DevOps con Build Tools](#pipeline-en-devops-con-build-tools)
+    - [Autorizacion de aplicación en Azure Entra ID para acceder al entorno](#autorizacion-de-aplicación-en-azure-entra-id-para-acceder-al-entorno)
+      - [Azure Entra Id](#azure-entra-id)
+      - [Añadir aplicación a los entornos de Power Platform](#añadir-aplicación-a-los-entornos-de-power-platform)
+    - [Conexión de servicio hacia el entorno en el repositorio de DevOps](#conexión-de-servicio-hacia-el-entorno-en-el-repositorio-de-devops)
+    - [Permisos sobre el repositorio](#permisos-sobre-el-repositorio)
+    - [Personal Access Token](#personal-access-token)
+    - [Agent pool](#agent-pool)
+  - [Exportar una solución desde un entorno de desarrollo](#exportar-una-solución-desde-un-entorno-de-desarrollo)
+  - [Creación de una release y despliegue en entorno](#creación-de-una-release-y-despliegue-en-entorno)
+
 ## Entornos 
 
 Para pode aplicar los principios de ALM, se necesitan como mínimo dos entornos, **Desarrollo** y **Producción**, pero lo ideal sería contar como mínimo con los entornos de **Desarrollo**, **Test** y **Producción**, de esta forma, se podrían hacer pruebas de tanto de funcionalidad como de despliegue. Otros entornos que se podrían añadir serían los entornos de **Test para cliente** e **Integración**.
