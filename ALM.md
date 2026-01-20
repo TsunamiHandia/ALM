@@ -253,7 +253,47 @@ Y necesitaremos las siguientes variables
     <img width="921" height="744" alt="image" src="https://github.com/user-attachments/assets/5780dc26-436e-4cd8-abd8-fc7f82b70092" />
 
 
-    
+## Creación de una release y despliegue en entorno
+
+  Mediante este proceso, generaremos una nuevo release y la desplegaremos en otro entorno como solución administrada.
+
+  > 💡**Nota**
+  > Se debería disponer de un trabajo distinto por entorno destino.
+  > <img width="884" height="231" alt="image" src="https://github.com/user-attachments/assets/d21cfc5d-b0ee-4fce-b07a-aee37508e50f" />
+
+1. Creamos un nuevo pipeline para generar el artefacto
+   <img width="1331" height="633" alt="image" src="https://github.com/user-attachments/assets/9840f673-96cc-4a43-9abd-9b00ecddd029" />
+
+   Configuramos el repositorio y la rama
+
+   <img width="1323" height="712" alt="image" src="https://github.com/user-attachments/assets/2665f819-2a3d-442f-a75c-21ddddfb51fc" />
+
+2. Crear el trabajo
+   
+   Crearemos las siguientes tareas
+
+   <img width="575" height="397" alt="image" src="https://github.com/user-attachments/assets/177caf23-9c35-408a-ae37-3660a914866a" />
+
+   a. Power Platform Tool Installer
+   b. Power Platform Pack Solution
+
+     Empaquetamos la solución como solución administrada.
+
+     <img width="454" height="580" alt="image" src="https://github.com/user-attachments/assets/b7129012-4452-49ca-8182-41b6e9501630" />
+
+   c. Power Platform Import Solution
+
+     Importamos la solución al entorno destino, para ello seleccionamos la conexión de servicio adecuada.
+
+     <img width="566" height="562" alt="image" src="https://github.com/user-attachments/assets/e228f1c0-fe59-4614-827b-008c3a910979" />
+
+   d. Power Platform Publish Customizations
+
+     Publicar la solución administrada en el entorno seleccionado
+
+     <img width="567" height="471" alt="image" src="https://github.com/user-attachments/assets/e7bcd32e-4e0b-48e8-be18-9ae2eb567b51" />
+
+
 
 
 
