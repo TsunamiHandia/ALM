@@ -146,4 +146,121 @@ En este caso he optado por usar un [*Self-hosted* agent pool alojado en Docker](
 
 Con este pipeline, obtendremos todos los objetos de una solución en el entorno de desarrollo y los subiremos al repositorio mediante un commit.
 
+El pipeline lo podríamos crear usando un fichero *YAML* o configuración clásica. En este caso uso la configuración clásica.
+
+<img width="849" height="555" alt="image" src="https://github.com/user-attachments/assets/d395e6da-44b5-4100-b532-a2c7a83cfe26" />
+
+Seleccionamos el repositorio
+
+<img width="646" height="433" alt="image" src="https://github.com/user-attachments/assets/05630247-8037-4ee1-a292-d2c8dd077228" />
+
+<img width="1343" height="207" alt="image" src="https://github.com/user-attachments/assets/76ee0fc8-f5ce-44af-925e-3600b89fa4c2" />
+
+Nombramos nuestro pipeline y le asignamos nuestra Agent pool
+
+<img width="929" height="140" alt="image" src="https://github.com/user-attachments/assets/8b836056-acf8-4870-bc00-a293a6093eee" />
+
+Agregaremos los siguientes pasos
+
+<img width="582" height="654" alt="image" src="https://github.com/user-attachments/assets/4d07dc15-c885-4e4f-a4b7-45519ddcc8db" />
+
+Y necesitaremos las siguientes variables
+
+<img width="1225" height="317" alt="image" src="https://github.com/user-attachments/assets/b2e37fa5-62c7-4ffb-8bc1-c82fdcea62e4" />
+
+1. Power Platform Tool Installer
+2. Power Platform Export Solution Unmanaged
+
+  Obtenemos la solución usando la conexión *Developmet Service Connection* (desarrollo) y la comprimimos en la ruta de los artefactos como *[solucionName]_Unmanaged.zip*
+  
+  <img width="557" height="698" alt="image" src="https://github.com/user-attachments/assets/368ed5ff-0ea2-4c09-b965-331b9bb8c99a" />
+
+3. Power Platform Export Solution Managed
+
+   Lo mismo que el paso anterior, pero esta vez con la solución administrada.
+
+    <img width="931" height="694" alt="image" src="https://github.com/user-attachments/assets/1a6d2cb0-5260-4d98-9ed4-531d084a138c" />
+   
+5. Power Platform Set Solution Version
+
+   Con este paso, actualizamos la versión en el entorno de desarrollo a la pasada como parámetro.
+
+   <img width="559" height="444" alt="image" src="https://github.com/user-attachments/assets/69b8ddba-f960-4465-80c8-f890571b31e6" />
+
+6. Power Platform Unpack Solution
+
+   Descomprimimos el paquete de la solución en nuestro repositorio, *../[solutionName]/Unmanaged*
+
+   <img width="428" height="650" alt="image" src="https://github.com/user-attachments/assets/c0656383-38e6-4321-92b3-e0d81fd73dec" />
+
+7. Power Platform Unpack Solution Managed
+
+   Realizamos la misma acción que en el caso anterior, pero esta vez para la solución administrada.
+
+   <img width="402" height="575" alt="image" src="https://github.com/user-attachments/assets/292663d4-76c2-450f-aa54-16a09bf75490" />
+
+9. Publish Artifact: Unmanaged
+
+   Publicación del directorio *Unmanaged* como artefacto del pipeline.
+
+   > ⚙️*Artefactos*
+   > <img width="1440" height="494" alt="image" src="https://github.com/user-attachments/assets/e554074a-fa62-4034-a1f7-d6bedecc6ab9" />
+   > <img width="1138" height="455" alt="image" src="https://github.com/user-attachments/assets/56e39013-dba9-4dfe-8232-73ea97fff003" />
+
+   <img width="370" height="443" alt="image" src="https://github.com/user-attachments/assets/8df06d82-8d16-4bf6-adc3-7bf662579707" />
+
+11. Publish Artifact: Managed
+
+    Realizamos la misma configuración para el artefacto de la solución administrada
+
+    <img width="436" height="441" alt="image" src="https://github.com/user-attachments/assets/7415ab68-ef9e-4665-8707-1bf393f6ca17" />
+
+12. Command Line Script
+
+    Con la ejecución del siguiente script, realizamos un commit a nuestro repositorio agregando todos los cambios de la solución.
+
+    <img width="600" height="369" alt="image" src="https://github.com/user-attachments/assets/1640b91a-7a9f-4f4a-97aa-c9b8a89b2fae" />
+
+    ``` pws
+    git config user.email "jmartinezfe@ibermatica01.onmicrosoft.com"
+    git config user.name "Jairo Martínez Fernández"
+    
+    BRANCH="$(Build.SourceBranchName)"
+    
+    git checkout -B "$BRANCH"
+    
+    git add --all
+    git commit -m "Export and unpack $(SolutionName) unmanaged solution $(SolutionVersion)"
+    
+    git -c http.extraheader="AUTHORIZATION: bearer $SYSTEM_ACCESSTOKEN" push origin "$BRANCH"
+    ```
+13. Ejecución del pipeline
+
+    <img width="1620" height="229" alt="image" src="https://github.com/user-attachments/assets/5071c258-c30d-4c25-b6f7-c684a7c97244" />
+
+    <img width="1643" height="490" alt="image" src="https://github.com/user-attachments/assets/a9eebbad-e021-46a6-a8b9-69b49c16bd6b" />
+
+    Repositorio
+
+    <img width="700" height="582" alt="image" src="https://github.com/user-attachments/assets/8fcf6f5f-6b60-48ba-bfe1-431ebc37c537" />
+
+    Commints
+
+    <img width="783" height="519" alt="image" src="https://github.com/user-attachments/assets/26c36cda-e4a4-488f-b2e4-73d3e8db1c37" />
+
+    Cambios
+
+    <img width="921" height="744" alt="image" src="https://github.com/user-attachments/assets/5780dc26-436e-4cd8-abd8-fc7f82b70092" />
+
+
+    
+
+
+
+
+
+
+
+
+
 
