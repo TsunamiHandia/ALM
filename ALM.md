@@ -18,6 +18,7 @@ Application lifecycle management
     - [Agent pool](#agent-pool)
   - [Exportar una solución desde un entorno de desarrollo](#exportar-una-solución-desde-un-entorno-de-desarrollo)
   - [Creación de una release y despliegue en entorno](#creación-de-una-release-y-despliegue-en-entorno)
+  - [Integración Git Power Platform](#Integración-Git-Power-Platform)
 
 ## Entornos 
 
@@ -309,9 +310,40 @@ Y necesitaremos las siguientes variables
 
      <img width="567" height="471" alt="image" src="https://github.com/user-attachments/assets/e7bcd32e-4e0b-48e8-be18-9ae2eb567b51" />
 
+## Integración Git Power Platform
 
+La integración de Git con Power Platform nos permitirá mantener respaldadas nuestras soluciones o entornos respaldados en un sistema de control de versiones. Se requiere disponer de Azure DevOps y Power Platform en la misma organización. Estas son las cosas que podremos hacer:
 
+  - Commit de los cambios realizados en la solución (Power Platform ➡️ DevOps)
+  - Pull de otros cambios realizados sobre el repositorio a la solución (Power Platform ⬅️ DevOps)
+  - Resolución de conflictos en caso de haberse hecho cambios tanto en la solución como en el repositorio
 
+### Configuración
+
+La configuración de Git en Power Platform es sencilla. Lo único que debemos decidir es si integraremos las soluciones de forma individual o todo el entorno.
+
+<img width="776" height="686" alt="image" src="https://github.com/user-attachments/assets/117e3dfe-ca53-404e-aa45-fb7c3b5e6633" />
+
+- **Solución**
+  Con este modo de integración, tendremos la libertad de elegir qué soluciones y dónde las integraremos en nuestro repositorio de forma individual.
+
+  En estas imágenes podemos ver cómo las soluciones sincronizadas han generado una estructura diferenciada en el repositorio.
+
+  |Power Platform|DevOps|
+  |-|-|
+  |<img width="1504" height="270" alt="image" src="https://github.com/user-attachments/assets/938969d8-7d84-44e2-ae74-c3bb2b16d293" />|<img width="244" height="479" alt="image" src="https://github.com/user-attachments/assets/4eed01c4-e1a1-4227-b813-ba6df67d10bb" />|
+  |<img width="397" height="481" alt="image" src="https://github.com/user-attachments/assets/0d242eba-a8a7-478a-95ac-5d1020caa724" />|TestSolution2|
+  |<img width="401" height="488" alt="image" src="https://github.com/user-attachments/assets/146e17df-2e23-4f8a-969d-79204b7ef5c7" />|TestSolution3|
+  
+
+- **Entorno**
+  Todas las soluciones se integrarán en el mismo punto dentro del repositorio. Esto no implica que se vayan a sincronizar todas de forma automática, dado que las deberemos conectar de forma individual.
+
+  En estas imágenes se puede observar cómo las soluciones *TestSolution2* y *TestSolution3*, generan una estructura distinta a la anterior.
+  
+  |Power Platform|DevOps|
+  |-|-|
+  |<img width="1638" height="287" alt="image" src="https://github.com/user-attachments/assets/90a133cd-b398-4198-8cb3-437cf8f3177c" />|<img width="292" height="404" alt="image" src="https://github.com/user-attachments/assets/b1147a5f-698f-4d88-989c-680d7735e756" />|
 
 
 
