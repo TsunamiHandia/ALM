@@ -269,6 +269,12 @@ Y necesitaremos las siguientes variables
 
     <img width="921" height="744" alt="image" src="https://github.com/user-attachments/assets/5780dc26-436e-4cd8-abd8-fc7f82b70092" />
 
+> 🗒️*Ejemplo del código de la solución en el repositorio*
+>
+> Formato XML
+>
+> <img width="949" height="678" alt="image" src="https://github.com/user-attachments/assets/4fc12424-2eec-4383-85b1-7c371ff9e3bf" />
+
 
 ## Creación de una release y despliegue en entorno
 
@@ -317,6 +323,13 @@ La integración de Git con Power Platform nos permitirá mantener respaldadas nu
   - Commit de los cambios realizados en la solución (Power Platform ➡️ DevOps)
   - Pull de otros cambios realizados sobre el repositorio a la solución (Power Platform ⬅️ DevOps)
   - Resolución de conflictos en caso de haberse hecho cambios tanto en la solución como en el repositorio
+
+> 🗒️*Ejemplo de código de solución en repositorio*
+>
+> Formato YML
+>
+> <img width="957" height="684" alt="image" src="https://github.com/user-attachments/assets/aa55486e-9210-4470-843a-366792b93a84" />
+
 
 ### Configuración
 
