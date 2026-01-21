@@ -34,6 +34,8 @@ Application lifecycle management
 
 Para pode aplicar los principios de ALM, se necesitan como mínimo dos entornos, **Desarrollo** y **Producción**, pero lo ideal sería contar como mínimo con los entornos de **Desarrollo**, **Test** y **Producción**, de esta forma, se podrían hacer pruebas de tanto de funcionalidad como de despliegue. Otros entornos que se podrían añadir serían los entornos de **Test para cliente** e **Integración**.
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ## Soluciones 
 
 Cualquier desarrollo que se quiera desplegar en un entorno de producción debería estar incluido dentro de una solución. Esta es la base que nos permitirá mover los desarrollos entre los distintos entornos como una unidad de cambio. 
@@ -46,6 +48,7 @@ Se deberán usar las soluciones administradas en los entornos de **Test** y **Pr
 > 
 > El proceso de creación de la solución administrada para pasar de un entorno a otro, debería ser un proceso automático que genere el artefacto para la instalación.
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ### Control de versiones 
 
@@ -59,6 +62,7 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 
 - Uso de procesos de aprobación de cambios 
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ## Control de versión con una solución 
 
@@ -74,6 +78,8 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 
 <img width="1053" height="436" alt="image" src="https://github.com/user-attachments/assets/7602a1c5-8ade-4e44-8fbb-30827119193a" />
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ## Pipeline en DevOps con Build Tools
 
 Necesitamos disponer de los siguientes elementos:
@@ -84,6 +90,8 @@ Necesitamos disponer de los siguientes elementos:
 - [PAT (Personal Access Token) con los permisos necesarios](#Personal-Access-Token)
 - [Permisos sobre el repositorio](#Permisos-sobre-el-repositorio)
 - [Agent pool](#Agent-tool)
+
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ### Autorizacion de aplicación en Azure Entra ID para acceder al entorno
 
@@ -103,6 +111,8 @@ Creamos un secreto y copiamos su valor antes de salir
 
 <img width="1024" height="209" alt="image" src="https://github.com/user-attachments/assets/a323746f-8b26-4bfd-ac65-e8a1f58a8a05" />
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 #### Añadir aplicación a los entornos de Power Platform
 
 Debemos agregar la aplicación registrada a cada uno de los entornos a los que queramos acceder desde DevOps.
@@ -112,6 +122,8 @@ Debemos agregar la aplicación registrada a cada uno de los entornos a los que q
 Asignar permiso de Administrador de sistema
 
 <img width="489" height="903" alt="image" src="https://github.com/user-attachments/assets/d2962a6b-071b-43f4-9c78-0b51287b279e" />
+
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ### Conexión de servicio hacia el entorno en el repositorio de DevOps
 
@@ -132,6 +144,8 @@ Ejemplo de creación del Servicio de conexión **Development Service Connection*
 |Service Connection Name|Nombre del servicio de conexión|
 |Security| Marcar la opción *Grant access permission to all pipelines*|
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ### Permisos sobre el repositorio
 
 Conceder permiso en el repositorio destino a **Project Collection Build Service Accounts** ➡️ ***Contribute** ➡️ **Allow**
@@ -146,6 +160,8 @@ Conceder permiso en el repositorio destino a **... Build Service (CRM-PowerPlatf
 >
 > En caso de no estar disponible **Power Platform** dentro de las opciones seleccionables para la creación del servicio, deberemos instalarlo desde [**Visual Studio Marketplace**](https://marketplace.visualstudio.com/search?term=power%20platform&target=AzureDevOps&category=All%20categories&sortBy=Relevance)
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ### Personal Access Token
 
 <img width="300" height="371" alt="image" src="https://github.com/user-attachments/assets/97a411fe-701f-4fa6-a147-9a69d0eb9488" />
@@ -158,6 +174,8 @@ Crearemos un PAT con los siguientes permisos
 |Build|Artifacts, definitions, requests, queue a build, and update build properties|Read & execute|
 |Code|Source code, repositories, pull requests, and notifications|Read & write|
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ### Agent pool
 
 Para correr nuestros pipelines necesitaremos un Agent Pool.
@@ -168,6 +186,7 @@ Para correr nuestros pipelines necesitaremos un Agent Pool.
 
 En este caso he optado por usar un [*Self-hosted* agent pool alojado en Docker](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/docker?view=azure-devops)
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ## Exportar una solución desde un entorno de desarrollo
 
@@ -285,6 +304,7 @@ Y necesitaremos las siguientes variables
 >
 > <img width="949" height="678" alt="image" src="https://github.com/user-attachments/assets/4fc12424-2eec-4383-85b1-7c371ff9e3bf" />
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ## Creación de una release y despliegue en entorno
 
@@ -326,6 +346,8 @@ Y necesitaremos las siguientes variables
 
      <img width="567" height="471" alt="image" src="https://github.com/user-attachments/assets/e7bcd32e-4e0b-48e8-be18-9ae2eb567b51" />
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ## Integración Git Power Platform
 
 La integración de Git con Power Platform nos permitirá mantener respaldadas nuestras soluciones o entornos respaldados en un sistema de control de versiones. Se requiere disponer de Azure DevOps y Power Platform en la misma organización. Estas son las cosas que podremos hacer:
@@ -340,6 +362,7 @@ La integración de Git con Power Platform nos permitirá mantener respaldadas nu
 >
 > <img width="957" height="684" alt="image" src="https://github.com/user-attachments/assets/aa55486e-9210-4470-843a-366792b93a84" />
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ### Configuración
 
@@ -368,6 +391,8 @@ La configuración de Git en Power Platform es sencilla. Lo único que debemos de
   |-|-|
   |<img width="1638" height="287" alt="image" src="https://github.com/user-attachments/assets/90a133cd-b398-4198-8cb3-437cf8f3177c" />|<img width="292" height="404" alt="image" src="https://github.com/user-attachments/assets/b1147a5f-698f-4d88-989c-680d7735e756" />|
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ## Despliegues con pipelines Power Platform
 
 En Power Platform disponemos de la posibilidad de realizar los despliegues de soluciones entre los distintos entornos mediante *pipelines*.
@@ -375,6 +400,8 @@ En Power Platform disponemos de la posibilidad de realizar los despliegues de so
 Podemos crear pipelines para despliegues sencillos, p.e. Desarrollo ➡️ Test o más complejos que incluyan más entornos Desarrollo ➡️ Test ➡️ Producción
 
 <img width="1262" height="591" alt="image" src="https://github.com/user-attachments/assets/af4d9f13-6046-4711-ae08-f52cd5652ce0" />
+
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ### Requisitos
 
@@ -388,6 +415,8 @@ Configurar el host para los pipelines:
   - Platform host, por defecto, gestionado por Microsoft. Reglas de governanza estabdarizadas por Microsoft.
   - Custom host, configurable. Requiere un entorno de producción nuevo. 
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ### Creación de un flujo Desarrollo - Test
 
 1. Comprobar que el entorno destino es administrado y en caso contrario configurarlo para que lo sea.
@@ -399,6 +428,8 @@ Configurar el host para los pipelines:
 3. Creamos un nuevo pipeline
 
    <img width="967" height="820" alt="image" src="https://github.com/user-attachments/assets/48775f02-23fc-40de-b40f-1ea41e4416a5" />
+
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 ### Creación de un flujo Desarrollo - Test - Producción
 
@@ -419,6 +450,8 @@ Configurar el host para los pipelines:
 
   <img width="1227" height="578" alt="image" src="https://github.com/user-attachments/assets/5ea13386-cca6-4560-85c4-8e0abc707f99" />
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ### Administrar pipelines
 
 A través del administrador de pipelines (Manage pipelines), podemos ver toda la información de los pipelines creados, los entornos, el histórico de ejecuciones, los artefactos...
@@ -433,13 +466,15 @@ Artefactos
 
 <img width="1348" height="507" alt="image" src="https://github.com/user-attachments/assets/72be00ba-04c4-483a-bc7b-51906f47d26d" />
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
+
 ### Despliegue de pipelines Service Principal o Pipeline Stage Owner
 
 Ampliar información sobre flujos de aprovación y despliegue delegado.
 
 [Extend pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/extend-pipelines)
 
-
+[Ir a tabla de contenido](#Tabla-de-contenido)
 
 
 
@@ -448,3 +483,4 @@ Ampliar información sobre flujos de aprovación y despliegue delegado.
 > [Create a pipeline using a custom pipelines host](https://learn.microsoft.com/en-gb/power-platform/alm/custom-host-pipelines)
 > [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines)
 
+[Ir a tabla de contenido](#Tabla-de-contenido)
