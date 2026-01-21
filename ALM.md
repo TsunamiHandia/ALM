@@ -29,6 +29,7 @@ Application lifecycle management
       - [Histórico](#histórico)
       - [Artefactos](#artefactos)
     - [Despliegue de pipelines Service Principal o Pipeline Stage Owner](#Despliegue-de-pipelines-Service-Principal-o-Pipeline-Stage-Owner)
+  - [Conclusiones](#Conclusiones)
 
 ## Entornos 
 
@@ -476,11 +477,35 @@ Ampliar información sobre flujos de aprovación y despliegue delegado.
 
 [Ir a tabla de contenido](#Tabla-de-contenido)
 
-
-
 > 📄*Documentación*
 >
 > [Create a pipeline using a custom pipelines host](https://learn.microsoft.com/en-gb/power-platform/alm/custom-host-pipelines)
 > [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines)
 
 [Ir a tabla de contenido](#Tabla-de-contenido)
+
+## Conclusiones
+
+Para poder implementar el ciclo de vida de las aplicaciones, despliegues entre entornos y control de versiones, disponemos de herramientas tanto en Power Platform como fuera, que nos ofrecen distintas ventajas y desventajas.
+
+1. Uso de Azure DevOps con pipelines personalizados
+   Ventajas
+     - Control total del proceso
+     - La integración con DevOps permite el uso de todo el potencial de este, PR, ramas, revisiones, tareas, ...
+     - Flexibilidad en escenarios complejos, multi-solución, integración con otros sistemas, ...
+  Desventajas
+    - Mayor complejidad inicial, configuración de los pipelines, permisos, agentes, service connections,...
+    - Curva de aprendizaje más alta
+    - Mantenimiento continuo, actualizar tareas, revisar fallos, gestionar dependencias,...      
+3. Power Platform con Git + Pipelines nativos
+   Ventajas
+     - Configuración sencilla
+     - Experiencia integrada en Power Platform, exportar, importar y validación de las soluciones sin salir del entorno
+     - Menos mantenimiento interno, Microsoft gestiona las tareas internas
+     - Automatización rápida, pipelines preconfigurados para ALM básico
+   Desventajas
+     - Menor flexibilidad
+     - Limitaciones en escenerios avanzados
+     - Dependencia del roadmap de Microsoft
+  
+  Podríamos decir a parte de las ventajas y desventajas de los dos sistemas, estos se pueden mezclar y producir un modelo híbrido de gestión ALM
