@@ -19,6 +19,7 @@ Application lifecycle management
   - [Exportar una solución desde un entorno de desarrollo](#exportar-una-solución-desde-un-entorno-de-desarrollo)
   - [Creación de una release y despliegue en entorno](#creación-de-una-release-y-despliegue-en-entorno)
   - [Integración Git Power Platform](#Integración-Git-Power-Platform)
+  - [Despliegues con pipelines Power Platform](#Despliegues-con-pipelines-Power-Platform)
 
 ## Entornos 
 
@@ -358,10 +359,33 @@ La configuración de Git en Power Platform es sencilla. Lo único que debemos de
   |-|-|
   |<img width="1638" height="287" alt="image" src="https://github.com/user-attachments/assets/90a133cd-b398-4198-8cb3-437cf8f3177c" />|<img width="292" height="404" alt="image" src="https://github.com/user-attachments/assets/b1147a5f-698f-4d88-989c-680d7735e756" />|
 
+## Despliegues con pipelines Power Platform
+
+En Power Platform disponemos de la posibilidad de realizar los despliegues de soluciones entre los distintos entornos mediante *pipelines*.
+
+Podemos crear pipelines para despliegues sencillos, p.e. Desarrollo ➡️ Test o más complejos que incluyan más entornos Desarrollo ➡️ Test ➡️ Producción
+
+<img width="1262" height="591" alt="image" src="https://github.com/user-attachments/assets/af4d9f13-6046-4711-ae08-f52cd5652ce0" />
+
+> 💡**Requisitos**
+>
+> Se deben tener los permisos suficientes para instalar la aplicación pipelines, administrador Power Platform o administrador system Dataverse
+> Los entornos destino deben:
+> - ser administrados (Managed Environment)
+> - tener base Microsoft Dataverse
+> 
 
 
 
+### Creación de un flujo Desarrollo - Test
 
+1. Comprobar que el entorno destino es administrado y en caso contrario configurarlo para que lo sea.
+   
+   <img width="504" height="207" alt="image" src="https://github.com/user-attachments/assets/79261667-58bd-4e27-bc43-da8b3c5f4f8d" />
+   
+2. En el entorno de origen, ir a la solución que queremos
 
-
+> 📄*Documentación*
+> 
+> [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines)
 
