@@ -28,6 +28,7 @@ Application lifecycle management
     - [Administrar pipelines](#administrar-pipelines)
       - [Histórico](#histórico)
       - [Artefactos](#artefactos)
+    - [Despliegue de pipelines Service Principal o Pipeline Stage Owner](#Despliegue-de-pipelines-Service-Principal-o-Pipeline-Stage-Owner)
 
 ## Entornos 
 
@@ -431,6 +432,15 @@ Histórico
 Artefactos
 
 <img width="1348" height="507" alt="image" src="https://github.com/user-attachments/assets/72be00ba-04c4-483a-bc7b-51906f47d26d" />
+
+### Despliegue de pipelines Service Principal o Pipeline Stage Owner
+
+Ampliar información sobre flujos de aprovación y despliegue delegado.
+
+[Extend pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/extend-pipelines)
+
+
+
 
 
 > 📄*Documentación*
