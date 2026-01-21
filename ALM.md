@@ -20,6 +20,14 @@ Application lifecycle management
   - [Creación de una release y despliegue en entorno](#creación-de-una-release-y-despliegue-en-entorno)
   - [Integración Git Power Platform](#Integración-Git-Power-Platform)
   - [Despliegues con pipelines Power Platform](#Despliegues-con-pipelines-Power-Platform)
+    - [Requisitos](#requisitos)
+    - [Creación de un flujo Desarrollo - Test](#creación-de-un-flujo-desarrollo---test)
+    - [Creación de un flujo Desarrollo - Test - Producción](#creación-de-un-flujo-desarrollo---test---producción)
+      - [Primer fase, Desarrollo ➡️ Test](#primer-fase-desarrollo--test)
+      - [Segunda fase, Test ➡️ Producción](#segunda-fase-test--producción)
+    - [Administrar pipelines](#administrar-pipelines)
+      - [Histórico](#histórico)
+      - [Artefactos](#artefactos)
 
 ## Entornos 
 
@@ -367,15 +375,17 @@ Podemos crear pipelines para despliegues sencillos, p.e. Desarrollo ➡️ Test 
 
 <img width="1262" height="591" alt="image" src="https://github.com/user-attachments/assets/af4d9f13-6046-4711-ae08-f52cd5652ce0" />
 
-> 💡**Requisitos**
->
-> Se deben tener los permisos suficientes para instalar la aplicación pipelines, administrador Power Platform o administrador system Dataverse
-> Los entornos destino deben:
-> - ser administrados (Managed Environment)
-> - tener base Microsoft Dataverse
-> 
+### Requisitos
 
+Se deben tener los permisos suficientes para instalar la aplicación pipelines, administrador Power Platform o administrador system Dataverse
 
+Los entornos destino deben:
+  - ser administrados (Managed Environment)
+  - tener base Microsoft Dataverse
+
+Configurar el host para los pipelines:
+  - Platform host, por defecto, gestionado por Microsoft. Reglas de governanza estabdarizadas por Microsoft.
+  - Custom host, configurable. Requiere un entorno de producción nuevo. 
 
 ### Creación de un flujo Desarrollo - Test
 
@@ -383,9 +393,48 @@ Podemos crear pipelines para despliegues sencillos, p.e. Desarrollo ➡️ Test 
    
    <img width="504" height="207" alt="image" src="https://github.com/user-attachments/assets/79261667-58bd-4e27-bc43-da8b3c5f4f8d" />
    
-2. En el entorno de origen, ir a la solución que queremos
+2. En el entorno de origen, ir a la solución que queremos desplegar y seleccionar Pipeline <img width="40" height="30" alt="image" src="https://github.com/user-attachments/assets/b048192f-37e6-4ba3-9fe0-0326359e6c8b" />
+
+3. Creamos un nuevo pipeline
+
+   <img width="967" height="820" alt="image" src="https://github.com/user-attachments/assets/48775f02-23fc-40de-b40f-1ea41e4416a5" />
+
+### Creación de un flujo Desarrollo - Test - Producción
+
+1. Comprobar que el entorno destino es administrado y en caso contrario configurarlo para que lo sea.
+   
+   <img width="504" height="207" alt="image" src="https://github.com/user-attachments/assets/79261667-58bd-4e27-bc43-da8b3c5f4f8d" />
+
+2. En el entorno de origen, ir a la solución que queremos desplegar y seleccionar Pipeline <img width="40" height="30" alt="image" src="https://github.com/user-attachments/assets/b048192f-37e6-4ba3-9fe0-0326359e6c8b" />
+
+3. Creamos un nuevo pipeline
+  3.1. Primer fase, Desarrollo ➡️ Test
+   
+    <img width="335" height="540" alt="image" src="https://github.com/user-attachments/assets/a3bb5064-10ba-466d-9ac4-1e95c9236445" />
+
+  3.2. Segunda fase, Test ➡️ Producción (<img width="97" height="23" alt="image" src="https://github.com/user-attachments/assets/cb733768-a608-45a4-b71d-cb81b4df64b2" />)
+
+    <img width="331" height="479" alt="image" src="https://github.com/user-attachments/assets/a171f141-4d31-48c7-987b-ae892073183d" />
+
+  <img width="1227" height="578" alt="image" src="https://github.com/user-attachments/assets/5ea13386-cca6-4560-85c4-8e0abc707f99" />
+
+### Administrar pipelines
+
+A través del administrador de pipelines (Manage pipelines), podemos ver toda la información de los pipelines creados, los entornos, el histórico de ejecuciones, los artefactos...
+
+Histórico
+
+<img width="1697" height="493" alt="image" src="https://github.com/user-attachments/assets/00bc3bf6-80d6-4af5-a69b-2dd1bd06d37f" />
+
+<img width="1518" height="332" alt="image" src="https://github.com/user-attachments/assets/340f151f-2f83-47fb-bb16-89af3404caea" />
+
+Artefactos
+
+<img width="1348" height="507" alt="image" src="https://github.com/user-attachments/assets/72be00ba-04c4-483a-bc7b-51906f47d26d" />
+
 
 > 📄*Documentación*
-> 
+>
+> [Create a pipeline using a custom pipelines host](https://learn.microsoft.com/en-gb/power-platform/alm/custom-host-pipelines)
 > [Overview of pipelines in Power Platform](https://learn.microsoft.com/en-us/power-platform/alm/pipelines)
 
