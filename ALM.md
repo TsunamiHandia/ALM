@@ -102,7 +102,7 @@ Debemos disponer en Azure Entra ID de una autorización de aplicación hacia nue
 
 Crearemos un registro de applicación normal
 
-<img width="1442" height="597" alt="image" src="https://github.com/user-attachments/assets/b5918301-a14d-4779-aaae-9829a5def1f4" />
+<img width="1442" height="648" alt="image" src="https://github.com/user-attachments/assets/3a90790c-cb45-42bb-bc4f-761249cfc8c9" />
 
 Asignamos los siguientes permisos
 
@@ -134,13 +134,13 @@ Crearemos tantos Servicios de conexión como entornos distintos nos queramos con
 
 Ejemplo de creación del Servicio de conexión **Development Service Connection**
 
-<img width="1234" height="904" alt="image" src="https://github.com/user-attachments/assets/23e5efee-f459-42aa-89d4-33e6baf514a6" />
+<img width="1234" height="904" alt="image" src="https://github.com/user-attachments/assets/c0dfc7f7-2a27-4c6d-8625-402b938e6a64" />
 
 |Configuración|Valor|
 |-|-|
-|Server URL|Url del entorno al que nos queremos conectar <img width="691" height="520" alt="image" src="https://github.com/user-attachments/assets/69caad26-6ce2-4c9c-836a-c11a42e2da95" />|
-|Tenant Id|Id del tenant <img width="1426" height="342" alt="image" src="https://github.com/user-attachments/assets/bc6a91b1-7943-4dbb-9ca6-63dcd7adeccf" />|
-|Application Id| Id de la applicación registrada en Azure Entra ID <img width="1426" height="342" alt="image" src="https://github.com/user-attachments/assets/a3ad2ca8-48eb-4de8-b01b-355cc01ec2e5" />|
+|Server URL|Url del entorno al que nos queremos conectar <img width="1152" height="648" alt="image" src="https://github.com/user-attachments/assets/49789b6e-aafd-4922-9236-2d15e47db7bf" />|
+|Tenant Id|Id del tenant <img width="1426" height="648" alt="image" src="https://github.com/user-attachments/assets/52c6a1f5-0dd0-4a18-ab99-0465f914e767" />|
+|Application Id| Id de la applicación registrada en Azure Entra ID <img width="1426" height="648" alt="image" src="https://github.com/user-attachments/assets/3a32f298-c8f9-4d22-937a-08cf4ca0fac9" />|
 |Client secret o Application Id|Valor del secreto de la aplicación registrada en Azure Entra ID <img width="1078" height="126" alt="image" src="https://github.com/user-attachments/assets/80f1fa1a-8ff9-42e4-b8d6-f58b3c6e08c6" />|
 |Service Connection Name|Nombre del servicio de conexión|
 |Security| Marcar la opción *Grant access permission to all pipelines*|
@@ -228,25 +228,25 @@ Y necesitaremos las siguientes variables
 
     <img width="931" height="694" alt="image" src="https://github.com/user-attachments/assets/1a6d2cb0-5260-4d98-9ed4-531d084a138c" />
    
-5. Power Platform Set Solution Version
+4. Power Platform Set Solution Version
 
    Con este paso, actualizamos la versión en el entorno de desarrollo a la pasada como parámetro.
 
    <img width="559" height="444" alt="image" src="https://github.com/user-attachments/assets/69b8ddba-f960-4465-80c8-f890571b31e6" />
 
-6. Power Platform Unpack Solution
+5. Power Platform Unpack Solution
 
    Descomprimimos el paquete de la solución en nuestro repositorio, *../[solutionName]/Unmanaged*
 
    <img width="428" height="650" alt="image" src="https://github.com/user-attachments/assets/c0656383-38e6-4321-92b3-e0d81fd73dec" />
 
-7. Power Platform Unpack Solution Managed
+6. Power Platform Unpack Solution Managed
 
    Realizamos la misma acción que en el caso anterior, pero esta vez para la solución administrada.
 
    <img width="402" height="575" alt="image" src="https://github.com/user-attachments/assets/292663d4-76c2-450f-aa54-16a09bf75490" />
 
-9. Publish Artifact: Unmanaged
+7. Publish Artifact: Unmanaged
 
    Publicación del directorio *Unmanaged* como artefacto del pipeline.
 
@@ -256,21 +256,21 @@ Y necesitaremos las siguientes variables
 
    <img width="370" height="443" alt="image" src="https://github.com/user-attachments/assets/8df06d82-8d16-4bf6-adc3-7bf662579707" />
 
-11. Publish Artifact: Managed
+8. Publish Artifact: Managed
 
     Realizamos la misma configuración para el artefacto de la solución administrada
 
     <img width="436" height="441" alt="image" src="https://github.com/user-attachments/assets/7415ab68-ef9e-4665-8707-1bf393f6ca17" />
 
-12. Command Line Script
+9. Command Line Script
 
     Con la ejecución del siguiente script, realizamos un commit a nuestro repositorio agregando todos los cambios de la solución.
 
     <img width="600" height="369" alt="image" src="https://github.com/user-attachments/assets/1640b91a-7a9f-4f4a-97aa-c9b8a89b2fae" />
 
     ``` pws
-    git config user.email "jmartinezfe@ibermatica01.onmicrosoft.com"
-    git config user.name "Jairo Martínez Fernández"
+    git config user.email "xxxx@xxxxxx.onmicrosoft.com"
+    git config user.name "xxxx"
     
     BRANCH="$(Build.SourceBranchName)"
     
@@ -281,9 +281,9 @@ Y necesitaremos las siguientes variables
     
     git -c http.extraheader="AUTHORIZATION: bearer $SYSTEM_ACCESSTOKEN" push origin "$BRANCH"
     ```
-13. Ejecución del pipeline
+10. Ejecución del pipeline
 
-    <img width="1620" height="229" alt="image" src="https://github.com/user-attachments/assets/5071c258-c30d-4c25-b6f7-c684a7c97244" />
+    <img width="1643" height="648" alt="image" src="https://github.com/user-attachments/assets/b03b1df7-17c7-4458-bc6f-bf303f15093b" />
 
     <img width="1643" height="490" alt="image" src="https://github.com/user-attachments/assets/a9eebbad-e021-46a6-a8b9-69b49c16bd6b" />
 
@@ -297,7 +297,7 @@ Y necesitaremos las siguientes variables
 
     Cambios
 
-    <img width="921" height="744" alt="image" src="https://github.com/user-attachments/assets/5780dc26-436e-4cd8-abd8-fc7f82b70092" />
+    <img width="1152" height="744" alt="image" src="https://github.com/user-attachments/assets/98f42233-cdcf-40a1-9487-34e82d180ffc" />
 
 > 🗒️*Ejemplo del código de la solución en el repositorio*
 >
@@ -446,8 +446,6 @@ Configurar el host para los pipelines:
     <img width="335" height="540" alt="image" src="https://github.com/user-attachments/assets/a3bb5064-10ba-466d-9ac4-1e95c9236445" />
 
   3.2. Segunda fase, Test ➡️ Producción (<img width="97" height="23" alt="image" src="https://github.com/user-attachments/assets/cb733768-a608-45a4-b71d-cb81b4df64b2" />)
-
-    <img width="331" height="479" alt="image" src="https://github.com/user-attachments/assets/a171f141-4d31-48c7-987b-ae892073183d" />
 
   <img width="1227" height="578" alt="image" src="https://github.com/user-attachments/assets/5ea13386-cca6-4560-85c4-8e0abc707f99" />
 
