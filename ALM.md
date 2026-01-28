@@ -51,7 +51,7 @@ Se deberán usar las soluciones administradas en los entornos de **Test** y **Pr
 
 [Ir a tabla de contenido](#Tabla-de-contenido)
 
-### Control de versiones 
+### Control de versiones
 
 Se debería utilizar un sistema de control de versiones por las siguientes razones: 
 
@@ -62,6 +62,10 @@ Se debería utilizar un sistema de control de versiones por las siguientes razon
 - Organización en ramas (bugs, pequeñas modificaciones, grandes desarrollos, ...) 
 
 - Uso de procesos de aprobación de cambios 
+
+Ejemplo de control de versions con ramas **main - development - task[n]**
+
+<img width="3613" height="2268" alt="Mermaid-preview" src="https://github.com/user-attachments/assets/4f9a1753-04d1-43a3-95c6-67c1fa03cc7a" />
 
 [Ir a tabla de contenido](#Tabla-de-contenido)
 
